@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "aioterminal"
+version = "1.0.0b1"
+description = "Basic cross-platform terminal functions for use with asyncio."
+authors = ["David Lechner <david@lechnology.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "aioterminal", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.1"
+
+
+[tool.poetry.group.lint.dependencies]
+ruff = "^0.0.282"
+
+[tool.ruff]
+# Never enforce `E501` (line length violations).
+ignore = ["E501"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
