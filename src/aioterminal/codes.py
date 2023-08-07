@@ -155,21 +155,21 @@ class C1(enum.IntEnum):
     Control characters in C1 group.
     """
 
-    X80 = 0x80
+    PAD = 0x80
     """
-    ?
+    Padding Character
     """
-    X81 = 0x81
+    HOP = 0x81
     """
-    ?
+    High Octet Preset
     """
-    X82 = 0x82
+    BPH = 0x82
     """
-    ?
+    Break Permitted Here
     """
-    X83 = 0x83
+    NBH = 0x83
     """
-    ?
+    No Break Here
     """
     IND = 0x84
     """
@@ -179,37 +179,37 @@ class C1(enum.IntEnum):
     """
     Next Line
     """
-    X86 = 0x86
+    SSA = 0x86
     """
-    ?
+    Start of Selected Area
     """
-    X87 = 0x87
+    ESA = 0x87
     """
-    ?
+    End of Selected Area
     """
-    BS = 0x88
+    HTS = 0x88
     """
-    Tab Set
+    Character Tabulation Set
     """
-    HTS = 0x89
+    HTJ = 0x89
     """
-    Horizontal Tab
+    Character Tabulation with Justification
     """
-    X8A = 0x8A
+    VTS = 0x8A
     """
-    ?
+    Line Tabulation Set
     """
-    X8B = 0x8B
+    PLD = 0x8B
     """
-    ?
+    Partial Line Forward
     """
-    X8C = 0x8C
+    PLU = 0x8C
     """
-    ?
+    Partial Line Backward
     """
     RI = 0x8D
     """
-    Reverse Index
+    Reverse Line Feed
     """
     SS2 = 0x8E
     """
@@ -223,45 +223,45 @@ class C1(enum.IntEnum):
     """
     Device Control String
     """
-    X91 = 0x91
+    PU1 = 0x91
     """
-    ?
+    Private Use 1
     """
-    X92 = 0x92
+    PU2 = 0x92
     """
-    ?
+    Private Use 2
     """
-    X93 = 0x93
+    STS = 0x93
     """
-    ?
+    Set Transmit State
     """
-    X94 = 0x94
+    CCH = 0x94
     """
-    ?
+    Cancel Character
     """
-    X95 = 0x95
+    MW = 0x95
     """
-    ?
+    Message Waiting
     """
     SPA = 0x96
     """
-    Start of Guarded Area
+    Start of Protected Area
     """
     EPA = 0x97
     """
-    End of Guarded Area
+    End of Protected Area
     """
     SOS = 0x98
     """
     Start of String
     """
-    X99 = 0x99
+    SGC = 0x99
     """
-    ?
+    Single Graphic Character Introducer
     """
-    DECID = 0x9A
+    SCI = 0x9A
     """
-    Return Terminal ID
+    Single Character Introducer
     """
     CSI = 0x9B
     """
@@ -322,10 +322,10 @@ def _csi(private: str, paramspec: list[str], intermediate: str, final: str):
 
 @dataclasses.dataclass(frozen=True)
 class CSI:
-    private: str
-    params: str
-    intermediate: str
-    final: str
+    private: str = ""
+    params: str = ""
+    intermediate: str = ""
+    final: str = ""
 
     def __repr__(self) -> str:
         name = self.name

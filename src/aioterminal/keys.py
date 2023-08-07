@@ -1,6 +1,6 @@
 import enum
 
-from .codes import C0, CSI, SS3
+from .codes import CSI, SS3
 
 
 class Key(enum.Enum):
@@ -44,77 +44,118 @@ class Key(enum.Enum):
 
 def code_to_key(code: int | str | SS3 | CSI) -> Key | None:
     match code:
-        case C0.CR | "\r":
-            return Key.ENTER
-        case C0.HT | "\t":
-            return Key.TAB
-        case C0.ESC | "\x1b":
-            return Key.ESCAPE
-        case C0.SP | " ":
-            return Key.SPACE
-        case C0.DEL | "\x7f":
-            return Key.BACKSPACE
-        case CSI("", "", "", "A"):
-            return Key.UP_ARROW
-        case CSI("", "", "", "B"):
-            return Key.DOWN_ARROW
-        case CSI("", "", "", "C"):
-            return Key.RIGHT_ARROW
-        case CSI("", "", "", "D"):
-            return Key.LEFT_ARROW
-        case CSI("", "", "", "E"):
-            return Key.BEGIN
-        case CSI("", "", "", "F"):
-            return Key.END
-        case CSI("", "", "", "H"):
-            return Key.HOME
-        case CSI("", "2", "", "~"):
-            return Key.INSERT
-        case CSI("", "3", "", "~"):
-            return Key.DELETE
-        case CSI("", "5", "", "~"):
-            return Key.PAGE_UP
-        case CSI("", "6", "", "~"):
-            return Key.PAGE_DOWN
-        case CSI("", "15", "", "~"):
-            return Key.F5
-        case CSI("", "17", "", "~"):
-            return Key.F6
-        case CSI("", "18", "", "~"):
-            return Key.F7
-        case CSI("", "19", "", "~"):
-            return Key.F8
-        case CSI("", "20", "", "~"):
-            return Key.F9
-        case CSI("", "21", "", "~"):
-            return Key.F10
-        case CSI("", "23", "", "~"):
-            return Key.F11
-        case CSI("", "24", "", "~"):
-            return Key.F12
-        case CSI("", "25", "", "~"):
-            return Key.F13
-        case CSI("", "26", "", "~"):
-            return Key.F14
-        case CSI("", "28", "", "~"):
-            return Key.F15
-        case CSI("", "20", "", "~"):
-            return Key.F16
-        case CSI("", "31", "", "~"):
-            return Key.F17
-        case CSI("", "32", "", "~"):
-            return Key.F18
-        case CSI("", "33", "", "~"):
-            return Key.F19
-        case CSI("", "34", "", "~"):
-            return Key.F20
-        case SS3("P"):
-            return Key.F1
-        case SS3("Q"):
-            return Key.F2
-        case SS3("R"):
-            return Key.F3
-        case SS3("S"):
-            return Key.F4
+        case str(s):
+            match s:
+                case "\r":
+                    return Key.ENTER
+                case "\t":
+                    return Key.TAB
+                case "\x1b":
+                    return Key.ESCAPE
+                case " ":
+                    return Key.SPACE
+                case "\x7f":
+                    return Key.BACKSPACE
+                case _:
+                    return None
+
+        case CSI(private, params, intermediates, final):
+            if not private and not intermediates:
+                match final:
+                    case "A":
+                        return Key.UP_ARROW
+                    case "B":
+                        return Key.DOWN_ARROW
+                    case "C":
+                        return Key.RIGHT_ARROW
+                    case "D":
+                        return Key.LEFT_ARROW
+                    case "E":
+                        return Key.BEGIN
+                    case "F":
+                        return Key.END
+                    case "H":
+                        return Key.HOME
+                    case "~":
+                        match params:
+                            case "1":
+                                return Key.HOME
+                            case "2":
+                                return Key.INSERT
+                            case "3":
+                                return Key.DELETE
+                            case "4":
+                                return Key.END
+                            case "5":
+                                return Key.PAGE_UP
+                            case "6":
+                                return Key.PAGE_DOWN
+                            case "15":
+                                return Key.F5
+                            case "17":
+                                return Key.F6
+                            case "18":
+                                return Key.F7
+                            case "19":
+                                return Key.F8
+                            case "20":
+                                return Key.F9
+                            case "21":
+                                return Key.F10
+                            case "23":
+                                return Key.F11
+                            case "24":
+                                return Key.F12
+                            case "25":
+                                return Key.F13
+                            case "26":
+                                return Key.F14
+                            case "28":
+                                return Key.F15
+                            case "29":
+                                return Key.F16
+                            case "31":
+                                return Key.F17
+                            case "32":
+                                return Key.F18
+                            case "33":
+                                return Key.F19
+                            case "34":
+                                return Key.F20
+                            case _:
+                                return None
+                    case _:
+                        return None
+        case SS3(char):
+            match char:
+                case " ":
+                    return Key.SPACE
+
+                case "A":
+                    return Key.UP_ARROW
+                case "B":
+                    return Key.DOWN_ARROW
+                case "C":
+                    return Key.RIGHT_ARROW
+                case "D":
+                    return Key.LEFT_ARROW
+                case "F":
+                    return Key.END
+                case "H":
+                    return Key.HOME
+                case "I":
+                    return Key.TAB
+                case "M":
+                    return Key.ENTER
+                case "P":
+                    return Key.F1
+                case "Q":
+                    return Key.F2
+                case "R":
+                    return Key.F3
+                case "S":
+                    return Key.F4
+                case _:
+                    return None
         case _:
             return None
