@@ -339,8 +339,8 @@ class CSI:
     def name(self) -> str | None:
         return _CSI_NAME_LOOKUP.get((self.private, self.intermediate, self.final))
 
-    @_csi("", ["Ps"], "", "@")
     @staticmethod
+    @_csi("", ["Ps"], "", "@")
     def ICH(n: int = None) -> CSI:
         """
         CSI Ps @
@@ -348,8 +348,8 @@ class CSI:
         Insert Ps (Blank) Character(s) (default = 1) (ICH).
         """
 
-    @_csi("", ["Ps"], " ", "@")
     @staticmethod
+    @_csi("", ["Ps"], " ", "@")
     def SL(n: int = None) -> CSI:
         """
         CSI Ps SP @
@@ -357,8 +357,8 @@ class CSI:
         Shift left Ps columns(s) (default = 1) (SL), ECMA-48.
         """
 
-    @_csi("", ["Ps"], "", "A")
     @staticmethod
+    @_csi("", ["Ps"], "", "A")
     def CUU(n: int = None) -> CSI:
         """
         CSI Ps A
@@ -366,8 +366,8 @@ class CSI:
         Cursor Up Ps Times (default = 1) (CUU).
         """
 
-    @_csi("", ["Ps"], " ", "A")
     @staticmethod
+    @_csi("", ["Ps"], " ", "A")
     def SR(n: int = None) -> CSI:
         """
         CSI Ps SP A
@@ -375,8 +375,8 @@ class CSI:
         Shift right Ps columns(s) (default = 1) (SR), ECMA-48.
         """
 
-    @_csi("", ["Ps"], "", "B")
     @staticmethod
+    @_csi("", ["Ps"], "", "B")
     def CUD(n: int = None) -> CSI:
         """
         CSI Ps B
@@ -384,8 +384,8 @@ class CSI:
         Cursor Down Ps Times (default = 1) (CUD).
         """
 
-    @_csi("", ["Ps"], "", "C")
     @staticmethod
+    @_csi("", ["Ps"], "", "C")
     def CUF(n: int = None) -> CSI:
         """
         CSI Ps C
@@ -393,8 +393,8 @@ class CSI:
         Cursor Forward Ps Times (default = 1) (CUF).
         """
 
-    @_csi("", ["Ps"], "", "D")
     @staticmethod
+    @_csi("", ["Ps"], "", "D")
     def CUB(n: int = None) -> CSI:
         """
         CSI Ps D
@@ -402,8 +402,8 @@ class CSI:
         Cursor Backward Ps Times (default = 1) (CUB).
         """
 
-    @_csi("", ["Ps"], "", "E")
     @staticmethod
+    @_csi("", ["Ps"], "", "E")
     def CNL(n: int = None) -> CSI:
         """
         CSI Ps E
@@ -411,8 +411,8 @@ class CSI:
         Cursor Next Line Ps Times (default = 1) (CNL).
         """
 
-    @_csi("", ["Ps"], "", "F")
     @staticmethod
+    @_csi("", ["Ps"], "", "F")
     def CPL(n: int = None) -> CSI:
         """
         CSI Ps F
@@ -420,8 +420,8 @@ class CSI:
         Cursor Preceding Line Ps Times (default = 1) (CPL).
         """
 
-    @_csi("", ["Ps"], "", "G")
     @staticmethod
+    @_csi("", ["Ps"], "", "G")
     def CHA(column: int = None) -> CSI:
         """
         CSI Ps G
@@ -429,8 +429,8 @@ class CSI:
         Cursor Character Absolute  [column] (default = [row,1]) (CHA).
         """
 
-    @_csi("", ["Ps", "Ps"], "", "H")
     @staticmethod
+    @_csi("", ["Ps", "Ps"], "", "H")
     def CUP(row: int = None, column: int = None) -> CSI:
         """
         CSI Ps ; Ps H
@@ -438,8 +438,8 @@ class CSI:
         Cursor Position [row;column] (default = [1,1]) (CUP).
         """
 
-    @_csi("", ["Ps"], "", "I")
     @staticmethod
+    @_csi("", ["Ps"], "", "I")
     def CHT(n: int = None) -> CSI:
         """
         CSI Ps I
@@ -447,8 +447,8 @@ class CSI:
         Cursor Forward Tabulation Ps tab stops (default = 1) (CHT).
         """
 
-    @_csi("", ["Ps"], "", "J")
     @staticmethod
+    @_csi("", ["Ps"], "", "J")
     def ED(erase: int = None) -> CSI:
         """
         CSI Ps J
@@ -461,8 +461,8 @@ class CSI:
         Ps = 3  ⇒  Erase Saved Lines, xterm.
         """
 
-    @_csi("?", ["Ps"], "", "J")
     @staticmethod
+    @_csi("?", ["Ps"], "", "J")
     def DECSED(erase: int = None) -> CSI:
         """
         CSI ? Ps J
@@ -475,8 +475,8 @@ class CSI:
         Ps = 3  ⇒  Selective Erase Saved Lines, xterm.
         """
 
-    @_csi("", ["Ps"], "", "K")
     @staticmethod
+    @_csi("", ["Ps"], "", "K")
     def EL(erase: int = None) -> CSI:
         """
         CSI Ps K
@@ -488,8 +488,8 @@ class CSI:
         Ps = 2  ⇒  Erase All.
         """
 
-    @_csi("?", ["Ps"], "", "K")
     @staticmethod
+    @_csi("?", ["Ps"], "", "K")
     def DECSEL(erase: int = None) -> CSI:
         """
         CSI ? Ps K
@@ -501,8 +501,8 @@ class CSI:
         Ps = 2  ⇒  Selective Erase All.
         """
 
-    @_csi("", ["Ps"], "", "L")
     @staticmethod
+    @_csi("", ["Ps"], "", "L")
     def IL(n: int = None) -> CSI:
         """
         CSI Ps L
@@ -510,8 +510,8 @@ class CSI:
         Insert Ps Line(s) (default = 1) (IL).
         """
 
-    @_csi("", ["Ps"], "", "M")
     @staticmethod
+    @_csi("", ["Ps"], "", "M")
     def DL(n: int = None) -> CSI:
         """
         CSI Ps M
@@ -519,8 +519,8 @@ class CSI:
         Delete Ps Line(s) (default = 1) (DL).
         """
 
-    @_csi("", ["Ps"], "", "P")
     @staticmethod
+    @_csi("", ["Ps"], "", "P")
     def DCH(n: int = None) -> CSI:
         """
         CSI Ps P
@@ -528,8 +528,8 @@ class CSI:
         Delete Ps Character(s) (default = 1) (DCH).
         """
 
-    @_csi("", ["Pm"], "#", "P")
     @staticmethod
+    @_csi("", ["Pm"], "#", "P")
     def XTPUSHCOLORS(*colors: int) -> CSI:
         """
         CSI # P
@@ -543,8 +543,8 @@ class CSI:
         store the palette into the stack without pushing.
         """
 
-    @_csi("", ["Pm"], "#", "Q")
     @staticmethod
+    @_csi("", ["Pm"], "#", "Q")
     def XTPOPCOLORS(*colors: int) -> CSI:
         """
         CSI # Q
@@ -558,8 +558,8 @@ class CSI:
         restore the palette from the stack without popping.
         """
 
-    @_csi("", [], "#", "R")
     @staticmethod
+    @_csi("", [], "#", "R")
     def XTREPORTCOLORS() -> CSI:
         """
         CSI # R
@@ -569,8 +569,8 @@ class CSI:
         XTPOPCOLOR (default = 0) (XTREPORTCOLORS), xterm.
         """
 
-    @_csi("", ["Ps"], "", "S")
     @staticmethod
+    @_csi("", ["Ps"], "", "S")
     def SU(n: int = None) -> CSI:
         """
         CSI Ps S
@@ -578,8 +578,8 @@ class CSI:
         Scroll up Ps lines (default = 1) (SU), VT420, ECMA-48.
         """
 
-    @_csi("?", ["Pi", "Ps", "Pv"], "", "S")
     @staticmethod
+    @_csi("?", ["Pi", "Ps", "Pv"], "", "S")
     def XTSMGRAPHICS(i: int, a: int, v: int) -> CSI:
         """
         CSI ? Pi ; Pa ; Pv S
@@ -640,8 +640,8 @@ class CSI:
             rather than a failure.
         """
 
-    @_csi("", ["Ps"], "", "T")
     @staticmethod
+    @_csi("", ["Ps"], "", "T")
     def SD(n: int = None) -> CSI:
         """
         CSI Ps T
@@ -649,8 +649,8 @@ class CSI:
         Scroll down Ps lines (default = 1) (SD), VT420.
         """
 
-    @_csi("", ["Ps", "Ps", "Ps", "Ps", "Ps"], "", "T")
     @staticmethod
+    @_csi("", ["Ps", "Ps", "Ps", "Ps", "Ps"], "", "T")
     def XTHIMOUSE(
         func: int, startx: int, starty: int, firstrow: int, lastrow: int
     ) -> CSI:
@@ -663,8 +663,8 @@ class CSI:
         section Mouse Tracking.
         """
 
-    @_csi(">", ["Pm"], "", "T")
     @staticmethod
+    @_csi(">", ["Pm"], "", "T")
     def XTRMTITLE(*modes: int) -> CSI:
         """
         CSI > Pm T
@@ -684,8 +684,8 @@ class CSI:
         (See discussion of Title Modes).
         """
 
-    @_csi("", ["Ps"], "", "X")
     @staticmethod
+    @_csi("", ["Ps"], "", "X")
     def ECH(n: int = None) -> CSI:
         """
         CSI Ps X
@@ -693,8 +693,8 @@ class CSI:
         Erase Ps Character(s) (default = 1) (ECH).
         """
 
-    @_csi("", ["Ps"], "", "Z")
     @staticmethod
+    @_csi("", ["Ps"], "", "Z")
     def CBT(n: int = 1) -> CSI:
         """
         CSI Ps Z
@@ -702,8 +702,8 @@ class CSI:
         Cursor Backward Tabulation Ps tab stops (default = 1) (CBT).
         """
 
-    @_csi("", ["Ps"], "", "^")
     @staticmethod
+    @_csi("", ["Ps"], "", "^")
     def SD_(n: int = None) -> CSI:
         """
         CSI Ps ^
@@ -714,8 +714,8 @@ class CSI:
         edition (1991) corrected in 2003.
         """
 
-    @_csi("", ["Ps"], "", "`")
     @staticmethod
+    @_csi("", ["Ps"], "", "`")
     def HPA(n: int = None) -> CSI:
         """
         CSI Ps `
@@ -723,8 +723,8 @@ class CSI:
         Character Position Absolute  [column] (default = [row,1]) (HPA).
         """
 
-    @_csi("", ["Ps"], "", "a")
     @staticmethod
+    @_csi("", ["Ps"], "", "a")
     def HPR(n: int = None) -> CSI:
         """
         CSI Ps a
@@ -732,8 +732,8 @@ class CSI:
         Character Position Relative  [columns] (default = [row,col+1]) (HPR).
         """
 
-    @_csi("", ["Ps"], "", "b")
     @staticmethod
+    @_csi("", ["Ps"], "", "b")
     def REP(n: int) -> CSI:
         """
         CSI Ps b
@@ -741,8 +741,8 @@ class CSI:
         Repeat the preceding graphic character Ps times (REP).
         """
 
-    @_csi("", ["Ps"], "", "c")
     @staticmethod
+    @_csi("", ["Ps"], "", "c")
     def PRIMARY_DA(n: int = None) -> CSI:
         """
         CSI Ps c
@@ -789,8 +789,8 @@ class CSI:
         DECPCCM, DECVCCM) are ignored.
         """
 
-    @_csi("", ["Ps"], "", "c")
     @staticmethod
+    @_csi("", ["Ps"], "", "c")
     def TERTIARY_DA(n: int = None) -> CSI:
         """
         CSI = Ps c
@@ -802,8 +802,8 @@ class CSI:
         response.
         """
 
-    @_csi(">", ["Ps"], "", "c")
     @staticmethod
+    @_csi(">", ["Ps"], "", "c")
     def SECONDARY_DA(n: int = None) -> CSI:
         """
         CSI > Ps c
@@ -834,8 +834,8 @@ class CSI:
         and is always zero.
         """
 
-    @_csi("", ["Ps"], "", "d")
     @staticmethod
+    @_csi("", ["Ps"], "", "d")
     def VPA(row: int = None) -> CSI:
         """
         CSI Ps d
@@ -843,8 +843,8 @@ class CSI:
         Line Position Absolute  [row] (default = [1,column]) (VPA).
         """
 
-    @_csi("", ["Ps"], "", "e")
     @staticmethod
+    @_csi("", ["Ps"], "", "e")
     def VPR(rows: int = None) -> CSI:
         """
         CSI Ps e
@@ -852,8 +852,8 @@ class CSI:
         Line Position Relative  [rows] (default = [row+1,column]) (VPR).
         """
 
-    @_csi("", ["Ps", "Ps"], "", "f")
     @staticmethod
+    @_csi("", ["Ps", "Ps"], "", "f")
     def HVP(row: int = None, column: int = None) -> CSI:
         """
         CSI Ps ; Ps f
@@ -862,8 +862,8 @@ class CSI:
         [1,1]) (HVP).
         """
 
-    @_csi("", ["Ps"], "", "g")
     @staticmethod
+    @_csi("", ["Ps"], "", "g")
     def TBC(n: int = None) -> CSI:
         """
         CSI Ps g
@@ -877,8 +877,8 @@ class CSI:
             Ps = 3  ⇒  Clear All.
         """
 
-    @_csi("", ["Pm"], "", "h")
     @staticmethod
+    @_csi("", ["Pm"], "", "h")
     def SM(*modes: int) -> CSI:
         """
         CSI Pm h
@@ -891,8 +891,8 @@ class CSI:
         Ps = 2 0  ⇒  Automatic Newline (LNM).
         """
 
-    @_csi("?", ["Pm"], "", "h")
     @staticmethod
+    @_csi("?", ["Pm"], "", "h")
     def DECSET(*modes: int) -> CSI:
         """
         CSI ? Pm h
@@ -1022,8 +1022,8 @@ class CSI:
             Ps = 2 0 0 6  ⇒  Enable readline newline pasting, xterm.
         """
 
-    @_csi("", ["Ps"], "", "i")
     @staticmethod
+    @_csi("", ["Ps"], "", "i")
     def MC(n: int = None) -> CSI:
         """
         CSI Ps i
@@ -1037,8 +1037,8 @@ class CSI:
         Ps = 1 1  ⇒  SVG screen dump, xterm.
         """
 
-    @_csi("?", ["Ps"], "", "i")
     @staticmethod
+    @_csi("?", ["Ps"], "", "i")
     def MC_DEC(n: int = None) -> CSI:
         """
         CSI ? Ps i
@@ -1052,8 +1052,8 @@ class CSI:
         Ps = 1 1  ⇒  Print all pages.
         """
 
-    @_csi("", ["Pm"], "", "1")
     @staticmethod
+    @_csi("", ["Pm"], "", "1")
     def RM(*modes: int) -> CSI:
         """
         CSI Pm l
@@ -1066,8 +1066,8 @@ class CSI:
         Ps = 2 0  ⇒  Normal Linefeed (LNM).
         """
 
-    @_csi("?", ["P"], "", "l")
     @staticmethod
+    @_csi("?", ["P"], "", "l")
     def DECRST(*modes: int) -> CSI:
         """
         CSI ? Pm l
@@ -1193,8 +1193,8 @@ class CSI:
             Ps = 2 0 0 6  ⇒  Disable readline newline pasting, xterm.
         """
 
-    @_csi("", ["Pm"], "", "m")
     @staticmethod
+    @_csi("", ["Pm"], "", "m")
     def SGR(*modes: int) -> CSI:
         """
         CSI Pm m
@@ -1340,8 +1340,8 @@ class CSI:
         directly render a given color.
         """
 
-    @_csi(">", ["Pp", "Pv"], "", "m")
     @staticmethod
+    @_csi(">", ["Pp", "Pv"], "", "m")
     def XTMODKEYS(param: int = None, value: int = None) -> CSI:
         """
         CSI > Pp ; Pv m
@@ -1370,8 +1370,8 @@ class CSI:
         initial values.
         """
 
-    @_csi("?", ["Pp"], "", "m")
     @staticmethod
+    @_csi("?", ["Pp"], "", "m")
     def XTQMODKEYS(param: int) -> CSI:
         """
         CSI ? Pp m
@@ -1398,8 +1398,8 @@ class CSI:
             Pp = 4  ⇒  modifyOtherKeys.
         """
 
-    @_csi("", ["Ps"], "", "n")
     @staticmethod
+    @_csi("", ["Ps"], "", "n")
     def DSR(n: int) -> CSI:
         """
         CSI Ps n
@@ -1427,8 +1427,8 @@ class CSI:
         key.
         """
 
-    @_csi(">", ["Ps"], "", "n")
     @staticmethod
+    @_csi(">", ["Ps"], "", "n")
     def DM(n: int) -> CSI:
         """
         CSI > Ps n
@@ -1454,8 +1454,8 @@ class CSI:
         modifiers.
         """
 
-    @_csi("?", ["Ps"], "", "n")
     @staticmethod
+    @_csi("?", ["Ps"], "", "n")
     def DSR_DEC(n: int) -> CSI:
         """
         CSI ? Ps n
@@ -1502,8 +1502,8 @@ class CSI:
         operation).
         """
 
-    @_csi(">", ["Ps"], "", "p")
     @staticmethod
+    @_csi(">", ["Ps"], "", "p")
     def XTSMPOINTER(n: int = None) -> CSI:
         """
         CSI > Ps p
@@ -1524,8 +1524,8 @@ class CSI:
         If no parameter is given, xterm uses the default, which is 1 .
         """
 
-    @_csi("", ["Ps"], "!", "p")
     @staticmethod
+    @_csi("", ["Ps"], "!", "p")
     def DECSTR() -> CSI:
         """
         CSI ! p
@@ -1533,8 +1533,8 @@ class CSI:
         Soft terminal reset (DECSTR), VT220 and up.
         """
 
-    @_csi("", ["Pl", "Pc"], '"', "p")
     @staticmethod
+    @_csi("", ["Pl", "Pc"], '"', "p")
     def DECSCL(level: int, control: int) -> CSI:
         """
         CSI Pl ; Pc " p
@@ -1560,8 +1560,8 @@ class CSI:
         S8C1T, but DECSCL is preferred.
         """
 
-    @_csi("", ["Ps"], "$", "p")
     @staticmethod
+    @_csi("", ["Ps"], "$", "p")
     def ANSI_DECRQM(n: int) -> CSI:
         """
         CSI Ps $ p
@@ -1578,8 +1578,8 @@ class CSI:
             4 - permanently reset
         """
 
-    @_csi("?", ["Ps"], "$", "p")
     @staticmethod
+    @_csi("?", ["Ps"], "$", "p")
     def PRIVATE_DECRQM(n: int) -> CSI:
         """
         CSI ? Ps $ p
@@ -1596,8 +1596,8 @@ class CSI:
         cursorBlinkXOR.
         """
 
-    @_csi("", ["Pm"], "#", "p")
     @staticmethod
+    @_csi("", ["Pm"], "#", "p")
     def XTPUSHSGR2(*modes: int) -> CSI:
         """
         CSI # p
@@ -1609,8 +1609,8 @@ class CSI:
         limitations of C#.
         """
 
-    @_csi(">", ["Ps"], "", "q")
     @staticmethod
+    @_csi(">", ["Ps"], "", "q")
     def XTVERSION(n: int) -> CSI:
         """
         CSI > Ps q
@@ -1620,8 +1620,8 @@ class CSI:
         The response is a DSR sequence identifying the version: DCS > | text ST
         """
 
-    @_csi("", ["Ps"], "", "q")
     @staticmethod
+    @_csi("", ["Ps"], "", "q")
     def DECLL(n: int = None) -> CSI:
         """
         CSI Ps q
@@ -1637,8 +1637,8 @@ class CSI:
             Ps = 2 3  ⇒  Extinguish Scroll Lock.
         """
 
-    @_csi("", ["Ps"], " ", "q")
     @staticmethod
+    @_csi("", ["Ps"], " ", "q")
     def DECSCUSR(n: int = None) -> CSI:
         """
         CSI Ps SP q
@@ -1654,8 +1654,8 @@ class CSI:
             Ps = 6  ⇒  steady bar, xterm.
         """
 
-    @_csi("", ["Ps"], '"', "q")
     @staticmethod
+    @_csi("", ["Ps"], '"', "q")
     def DECSCA(n: int = None) -> CSI:
         """
         CSI Ps " q
@@ -1668,8 +1668,8 @@ class CSI:
             Ps = 2  ⇒  DECSED and DECSEL can erase.
         """
 
-    @_csi("", [], "#", "q")
     @staticmethod
+    @_csi("", [], "#", "q")
     def XTPOPSGR2() -> CSI:
         """
         CSI # q
@@ -1679,8 +1679,8 @@ class CSI:
         This is an alias for CSI # } , used to work around language limitations of C#.
         """
 
-    @_csi("", ["Ps", "Ps"], "", "r")
     @staticmethod
+    @_csi("", ["Ps", "Ps"], "", "r")
     def DECSTBM(top: int = None, bottom: int = None) -> CSI:
         """
         CSI Ps ; Ps r
@@ -1689,8 +1689,8 @@ class CSI:
         window) (DECSTBM), VT100.
         """
 
-    @_csi("?", ["Pm"], "", "r")
     @staticmethod
+    @_csi("?", ["Pm"], "", "r")
     def XTRESTORE(*modes: int) -> CSI:
         """
         CSI ? Pm r
@@ -1706,8 +1706,8 @@ class CSI:
         are restored.
         """
 
-    @_csi("", ["Pt", "Pl", "Pb", "Pr", "Pm"], "$", "r")
     @staticmethod
+    @_csi("", ["Pt", "Pl", "Pb", "Pr", "Pm"], "$", "r")
     def DECCARA(top: int, left: int, bottom: int, right: int, *modes: int) -> CSI:
         """
         CSI Pt ; Pl ; Pb ; Pr ; Pm $ r
@@ -1718,8 +1718,8 @@ class CSI:
             Pm denotes the SGR attributes to change: 0, 1, 4, 5, 7.
         """
 
-    @_csi("", [], "", "s")
     @staticmethod
+    @_csi("", [], "", "s")
     def SCOSC() -> CSI:
         """
         CSI s
@@ -1727,8 +1727,8 @@ class CSI:
         Save cursor, available only when DECLRMM is disabled (SCOSC, also ANSI.SYS).
         """
 
-    @_csi("", ["Pl", "Pr"], "", "s")
     @staticmethod
+    @_csi("", ["Pl", "Pr"], "", "s")
     def DECSLRM(left: int, right: int) -> CSI:
         """
         CSI Pl ; Pr s
@@ -1738,8 +1738,8 @@ class CSI:
         This is available only when DECLRMM is enabled.
         """
 
-    @_csi(">", ["Ps"], "", "s")
     @staticmethod
+    @_csi(">", ["Ps"], "", "s")
     def XTSHIFTESCAPE(n: int = None) -> CSI:
         """
         CSI > Ps s
@@ -1762,8 +1762,8 @@ class CSI:
         If no parameter is given, xterm uses the default, which is 0 .
         """
 
-    @_csi("?", ["Pm"], "", "s")
     @staticmethod
+    @_csi("?", ["Pm"], "", "s")
     def XTSAVE(*modes: int) -> CSI:
         """
         CSI ? Pm s
@@ -1777,8 +1777,8 @@ class CSI:
         saved.
         """
 
-    @_csi("", ["Ps", "Ps", "Ps"], "", "t")
     @staticmethod
+    @_csi("", ["Ps", "Ps", "Ps"], "", "t")
     def XTWINOPS(n: int, a1: int = None, a2: int = None) -> CSI:
         """
         CSI Ps ; Ps ; Ps t
@@ -1860,8 +1860,8 @@ class CSI:
         xterm adapts this by resizing its window.
         """
 
-    @_csi(">", ["Pm"], "", "t")
     @staticmethod
+    @_csi(">", ["Pm"], "", "t")
     def XTSMTITLE(*m: int) -> CSI:
         """
         CSI > Pm t
@@ -1877,8 +1877,8 @@ class CSI:
         discussion of Title Modes)
         """
 
-    @_csi("", ["Ps"], " ", "t")
     @staticmethod
+    @_csi("", ["Ps"], " ", "t")
     def DECSWBV(n: int) -> CSI:
         """
         CSI Ps SP t
@@ -1890,8 +1890,8 @@ class CSI:
             Ps = 5 , 6 , 7 , or 8  ⇒  high.
         """
 
-    @_csi("", ["Pt", "Pl", "Pb", "Pr", "Pm"], "$", "t")
     @staticmethod
+    @_csi("", ["Pt", "Pl", "Pb", "Pr", "Pm"], "$", "t")
     def DECRARA(top: int, left: int, bottom: int, right: int, *m: int) -> CSI:
         """
         CSI Pt ; Pl ; Pb ; Pr ; Pm $ t
@@ -1902,8 +1902,8 @@ class CSI:
             Pm denotes the attributes to reverse, i.e.,  1, 4, 5, 7.
         """
 
-    @_csi("", [], "", "u")
     @staticmethod
+    @_csi("", [], "", "u")
     def SCORC() -> CSI:
         """
         CSI u
@@ -1911,8 +1911,8 @@ class CSI:
         Restore cursor (SCORC, also ANSI.SYS).
         """
 
-    @_csi("", ["Ps"], "", "u")
     @staticmethod
+    @_csi("", ["Ps"], "", "u")
     def DECSMBV(n: int) -> CSI:
         """
         CSI Ps SP u
@@ -1924,8 +1924,8 @@ class CSI:
             Ps = 2 , 3  or 4  ⇒  low.
         """
 
-    @_csi("", ["Pt", "Pl", "Pb", "Pr", "Pp", "Pt", "Pl", "Pp"], "$", "v")
     @staticmethod
+    @_csi("", ["Pt", "Pl", "Pb", "Pr", "Pp", "Pt", "Pl", "Pp"], "$", "v")
     def DECCRA(
         top: int,
         left: int,
@@ -1947,8 +1947,8 @@ class CSI:
             Pp denotes the target page.
         """
 
-    @_csi("", ["Ps"], "$", "w")
     @staticmethod
+    @_csi("", ["Ps"], "$", "w")
     def DECRQPSR(n: int) -> CSI:
         """
         CSI Ps $ w
@@ -1968,8 +1968,8 @@ class CSI:
         "/" characters.
         """
 
-    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "'", "w")
     @staticmethod
+    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "'", "w")
     def DECEFR(top: int, left: int, bottom: int, right: int) -> CSI:
         """
         CSI Pt ; Pl ; Pb ; Pr ' w
@@ -1987,8 +1987,8 @@ class CSI:
         cancels any previous rectangle definition.
         """
 
-    @_csi("", ["Ps"], "", "x")
     @staticmethod
+    @_csi("", ["Ps"], "", "x")
     def DECREQTPARM(n: int = None) -> CSI:
         """
         CSI Ps x
@@ -2007,8 +2007,8 @@ class CSI:
             Pn = 0  ⇐  STP flags.
         """
 
-    @_csi("", ["Ps"], "*", "x")
     @staticmethod
+    @_csi("", ["Ps"], "*", "x")
     def DECSACE(n: int) -> CSI:
         """
         CSI Ps * x
@@ -2020,8 +2020,8 @@ class CSI:
             Ps = 2  ⇒  rectangle (exact).
         """
 
-    @_csi("", ["Pc", "Pt", "Pl", "Pb", "Pr"], "$", "x")
     @staticmethod
+    @_csi("", ["Pc", "Pt", "Pl", "Pb", "Pr"], "$", "x")
     def DECFRA(char: int, top: int, left: int, bottom: int, right: int) -> CSI:
         """
         CSI Pc ; Pt ; Pl ; Pb ; Pr $ x
@@ -2032,8 +2032,8 @@ class CSI:
             Pt ; Pl ; Pb ; Pr denotes the rectangle.
         """
 
-    @_csi("", ["Ps"], "#", "y")
     @staticmethod
+    @_csi("", ["Ps"], "#", "y")
     def XTCHECKSUM(n: int) -> CSI:
         """
         CSI Ps # y
@@ -2050,8 +2050,8 @@ class CSI:
             5  ⇒  do not mask cell value to 7 bits.
         """
 
-    @_csi("", ["Pi", "Pb", "Pt", "Pl", "Pb", "Pr"], "*", "y")
     @staticmethod
+    @_csi("", ["Pi", "Pb", "Pt", "Pl", "Pb", "Pr"], "*", "y")
     def DECRQCRA(
         id: int, page: int, top: int, left: int, bottom: int, right: int
     ) -> CSI:
@@ -2068,8 +2068,8 @@ class CSI:
             The x's are hexadecimal digits 0-9 and A-F.
         """
 
-    @_csi("", ["Ps", "Pu"], "'", "z")
     @staticmethod
+    @_csi("", ["Ps", "Pu"], "'", "z")
     def DECELR(locator: int, unit: int) -> CSI:
         """
         CSI Ps ; Pu ' z
@@ -2088,8 +2088,8 @@ class CSI:
             Pu = 2  ⇐  character cells.
         """
 
-    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "$", "z")
     @staticmethod
+    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "$", "z")
     def DECERA(top: int, left: int, bottom: int, right: int) -> CSI:
         """
         CSI Pt ; Pl ; Pb ; Pr $ z
@@ -2099,8 +2099,8 @@ class CSI:
             Pt ; Pl ; Pb ; Pr denotes the rectangle.
         """
 
-    @_csi("", ["Pm"], "'", "{")
     @staticmethod
+    @_csi("", ["Pm"], "'", "{")
     def DECSLE(*m: int) -> CSI:
         """
         CSI Pm ' {
@@ -2117,8 +2117,8 @@ class CSI:
             Ps = 4  ⇒  do not report button up transitions.
         """
 
-    @_csi("", ["Pm"], "#", "{")
     @staticmethod
+    @_csi("", ["Pm"], "#", "{")
     def XTPUSHSGR(*m: int) -> CSI:
         """
         CSI # {
@@ -2145,8 +2145,8 @@ class CSI:
         saved.  The stack is limited to 10 levels.
         """
 
-    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "$", "{")
     @staticmethod
+    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "$", "{")
     def DECSERA(top: int, left: int, bottom: int, right: int) -> CSI:
         """
         CSI Pt ; Pl ; Pb ; Pr $ {
@@ -2156,8 +2156,8 @@ class CSI:
             Pt ; Pl ; Pb ; Pr denotes the rectangle.
         """
 
-    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "#", "|")
     @staticmethod
+    @_csi("", ["Pt", "Pl", "Pb", "Pr"], "#", "|")
     def XTREPORTSGR(top: int, left: int, bottom: int, right: int) -> CSI:
         """
         CSI Pt ; Pl ; Pb ; Pr # |
@@ -2169,8 +2169,8 @@ class CSI:
             Pt ; Pl ; Pb ; Pr denotes the rectangle.
         """
 
-    @_csi("", ["Ps"], "$", "|")
     @staticmethod
+    @_csi("", ["Ps"], "$", "|")
     def DECSCPP(n: int = None) -> CSI:
         """
         CSI Ps $ |
@@ -2182,8 +2182,8 @@ class CSI:
             Ps = 1 3 2  ⇒  132 columns.
         """
 
-    @_csi("", ["Ps"], "'", "|")
     @staticmethod
+    @_csi("", ["Ps"], "'", "|")
     def DECRQLP(n: int = None) -> CSI:
         """
         CSI Ps ' |
@@ -2229,8 +2229,8 @@ class CSI:
         The "page" parameter is not used by xterm.
         """
 
-    @_csi("", ["Ps"], "*", "|")
     @staticmethod
+    @_csi("", ["Ps"], "*", "|")
     def DECSNLS(n: int) -> CSI:
         """
         CSI Ps * |
@@ -2238,8 +2238,8 @@ class CSI:
         Select number of lines per screen (DECSNLS), VT420 and up.
         """
 
-    @_csi("", [], "#", "}")
     @staticmethod
+    @_csi("", [], "#", "}")
     def XTPOPSGR() -> CSI:
         """
         CSI # }
@@ -2250,8 +2250,8 @@ class CSI:
         to their previous state.
         """
 
-    @_csi("", ["Ps"], "'", "}")
     @staticmethod
+    @_csi("", ["Ps"], "'", "}")
     def DECIC(n: int = None) -> CSI:
         """
         CSI Ps ' }
@@ -2259,8 +2259,8 @@ class CSI:
         Insert Ps Column(s) (default = 1) (DECIC), VT420 and up.
         """
 
-    @_csi("", ["Ps"], "$", "}")
     @staticmethod
+    @_csi("", ["Ps"], "$", "}")
     def DECSASD(n: int = None) -> CSI:
         """
         CSI Ps $ }
@@ -2270,8 +2270,8 @@ class CSI:
             Ps = 1  ⇒  status line
         """
 
-    @_csi("", ["Ps"], "'", "~")
     @staticmethod
+    @_csi("", ["Ps"], "'", "~")
     def DECDC(n: int = None) -> CSI:
         """
         CSI Ps ' ~
@@ -2279,8 +2279,8 @@ class CSI:
         Delete Ps Column(s) (default = 1) (DECDC), VT420 and up.
         """
 
-    @_csi("", ["Ps"], "$", "~")
     @staticmethod
+    @_csi("", ["Ps"], "$", "~")
     def DECSSDT(n: int = None) -> CSI:
         """
         CSI Ps $ ~
